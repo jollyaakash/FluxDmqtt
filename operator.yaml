@@ -1,0 +1,15 @@
+apiVersion: aziot-edge.com/v1
+kind: IotedgeBroker
+metadata:
+  name: edgy
+  namespace: default
+spec:
+  frontend:
+    replicas: 1
+  backendChain:
+    replicas: 1
+    chainCount: 2
+  image:
+    repository: dmqttdemo.azurecr.io/dmqtt-broker
+    tag: latest
+    pullSecrets: regcred
