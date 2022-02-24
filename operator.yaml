@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   frontend:
-    replicas: 1
+    replicas: 2
   backendChain:
     replicas: 1
     chainCount: 2
