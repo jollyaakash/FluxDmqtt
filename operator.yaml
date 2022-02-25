@@ -12,4 +12,3 @@ spec:
   image:
     repository: dmqttdemo.azurecr.io/dmqtt-broker
     tag: latest
-    pullSecrets: regcred
