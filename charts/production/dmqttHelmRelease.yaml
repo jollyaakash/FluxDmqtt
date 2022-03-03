@@ -3,15 +3,16 @@ kind: HelmRelease
 metadata:
   name: dmqttdemo-helmrelease
   namespace: default
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:dev-*
 spec:
   releaseName: dmqttdemo-dev
   chart:
     git: https://github.com/jollyaakash/FluxDmqtt.git
     path: charts/production
     ref: master
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
   values:
     broker:
       frontend:
