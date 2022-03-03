@@ -14,3 +14,5 @@ spec:
   # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
   ref:
     branch: master
+  secretRef:
+    name: my-custom-secret
