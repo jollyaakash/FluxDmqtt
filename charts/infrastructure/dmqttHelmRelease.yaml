@@ -6,10 +6,9 @@ metadata:
 spec:
   releaseName: dmqttdemo-dev
   chart:
-    git: https://github.com/jollyaakash/FluxDmqtt.git
-    path: charts/production
-    ref: master
+    repository: oci://dmqttdemo.azurecr.io/helm/dmqtt
   interval: 5m
+  targetNamespace: default
   install:
     remediation:
       retries: 3
