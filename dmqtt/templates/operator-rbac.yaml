@@ -1,0 +1,48 @@
+{{- $fullName := include "dmqtt.fullname" . -}}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ $fullName }}-operator
+  labels:
+    {{- include "dmqtt.labels" . | nindent 4 }}
+  {{- with .Values.serviceAccount.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: {{ $fullName }}-operator
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["list", "watch"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["list", "create", "delete", "patch"]
+  - apiGroups: ["apps"]
+    resources: ["statefulsets"]
+    verbs: ["list", "get", "create", "delete", "patch"]
+  - apiGroups: [""]
+    resources: ["serviceaccounts", "configmaps"]
+    verbs: ["list", "get", "create", "patch", "delete"]
+  - apiGroups: ["aziot-edge.com"]
+    resources: ["iotedgebrokers"]
+    verbs: ["list", "get", "create", "patch", "delete", "watch"]
+  - apiGroups: ["aziot-edge.com"]
+    resources: ["iotedgebrokers/status"]
+    verbs: ["list", "get", "create", "update", "delete", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ $fullName }}-operator
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ $fullName }}-operator
+subjects:
+  - kind: ServiceAccount
+    name: {{ $fullName }}-operator
+---

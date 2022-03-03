@@ -1,0 +1,7 @@
+apiVersion: v2
+appVersion: 0.1.0
+description: 'An installation package for D-MQTT: distributed MQTT broker for Azure
+  IoT Edge platform'
+name: dmqtt
+type: application
+version: 0.1.0
