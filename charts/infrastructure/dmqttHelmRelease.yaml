@@ -6,12 +6,13 @@ metadata:
 spec:
   releaseName: dmqttdemo-dev
   chart:
-    repository: oci://dmqttdemo.azurecr.io/helm/dmqtt
+    spec:
+      chart: ./dmqtt
+      sourceRef:
+        kind: GitRepository
+        name: my-repository
+        namespace: default
   interval: 5m
-  targetNamespace: default
-  install:
-    remediation:
-      retries: 3
   values:
     broker:
       frontend:
