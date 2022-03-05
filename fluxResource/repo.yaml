@@ -1,5 +1,5 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: GitRepository
+kind: HelmRepository
 metadata:
   name: my-repository
   namespace: default
@@ -7,12 +7,4 @@ spec:
   # The interval at which to check the upstream for updates
   interval: 1m
   # The repository URL, can be a HTTP/S or SSH address
-  url: https://github.com/jollyaakash/FluxDmqtt
-  # The Git reference to checkout and monitor for changes
-  # (defaults to master)
-  # For all available options, see:
-  # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
-  ref:
-    branch: main
-  secretRef:
-    name: my-custom-secret
+  url: https://jollyaakash.github.io/DmqttHelmChart/
