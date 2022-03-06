@@ -1,0 +1,14 @@
+apiVersion: aziot-edge.com/v1
+kind: IotedgeBroker
+metadata:
+ name: edgy
+ namespace: demo
+spec:
+ frontend:
+   replicas: 2
+ backendChain:
+   replicas: 1
+   chainCount: 2
+ image:
+   repository: aziot/iotedge-broker
+   tag: latest
