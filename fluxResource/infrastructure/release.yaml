@@ -7,7 +7,7 @@ spec:
   releaseName: dmqttdemo-dev
   chart:
     spec:
-      chart: dmqttdemo
+      chart: dmqttdemochart
       sourceRef:
         kind: HelmRepository
         name: my-repository
