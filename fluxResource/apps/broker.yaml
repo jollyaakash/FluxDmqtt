@@ -2,7 +2,7 @@ apiVersion: aziot-edge.com/v1
 kind: IotedgeBroker
 metadata:
  name: edgy
- namespace: demo
+ namespace: dmqttdemo
 spec:
  frontend:
    replicas: 2
