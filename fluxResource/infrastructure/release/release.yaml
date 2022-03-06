@@ -8,11 +8,13 @@ spec:
   chart:
     spec:
       chart: dmqttdemo
+      interval: 1
       sourceRef:
         kind: HelmRepository
         name: my-repository
         namespace: dmqttdemo
-  interval: 5m
+  interval: 1m
+  timeout: 10m
   values:
     broker:
       frontend:
