@@ -7,9 +7,9 @@ spec:
   releaseName: dmqttdemo-dev
   chart:
     spec:
-      chart: ./dmqtt
+      chart: dmqttdemo
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: my-repository
         namespace: default
   interval: 5m
