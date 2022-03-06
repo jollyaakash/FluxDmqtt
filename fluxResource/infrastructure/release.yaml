@@ -13,7 +13,3 @@ spec:
         name: my-repository
         namespace: dmqttdemo
   interval: 5m
-  values:
-    broker:
-      frontend:
-        replicas: 1
