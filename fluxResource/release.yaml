@@ -18,4 +18,4 @@ spec:
     replicaCount: 1
     broker:
       frontend:
-        replicas: 1
+        replicas: 2
