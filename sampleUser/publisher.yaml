@@ -19,7 +19,8 @@ spec:
           image: dmqttdemo.azurecr.io/identity/test/publisher:latest
           volumeMounts:
             - name: iotedge-spiffe-agent-socket
-              mountPath: /run/iotedge/sockets/           
+              mountPath: /run/iotedge/sockets/
+      volumes:
         - name: iotedge-spiffe-agent-socket
           hostPath:
             path: /run/iotedge/sockets/
