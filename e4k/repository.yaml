@@ -1,12 +1,11 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
 metadata:
-  name: e4k-helmrelease
-  namespace: e4k
+  name: my-repository
+  namespace: dmqttdemo
 spec:
-  releaseName: e4k-dev
-  chart:
-    repository: https://edgecharts.azurecr.io/helm/v1/repo/
-    name: gitaz-e4k
-    version: 0.1.0
-  interval: 5m
+  # The interval at which to check the upstream for updates
+  interval: 1m
+  # The repository URL, can be a HTTP/S or SSH address
+  url: https://edgecharts.azurecr.io/helm/v1/repo/
