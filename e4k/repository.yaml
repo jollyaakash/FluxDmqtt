@@ -7,6 +7,6 @@ spec:
   releaseName: e4k-dev
   chart:
     repository: https://edgecharts.azurecr.io/helm/v1/repo/
-    name: githelm/e4k
+    name: gitaz-e4k
     version: 0.1.0
   interval: 5m
