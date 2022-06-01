@@ -9,3 +9,5 @@ spec:
   ref:
     branch: master
     commit: "2266acf19420a1af20f8e331e72bc149fa52e3b3"
+  secretRef:
+    name: basic-access-auth
