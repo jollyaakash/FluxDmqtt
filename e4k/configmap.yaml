@@ -27,12 +27,12 @@ data:
                   plugin: K8S
                   parent_id: '1'
             - spiffe_id: '3'
-              spiffe_id_path: publisher
+              spiffe_id_path: workload
               attestation_config:
                 type: WORKLOAD
                 content:
                   value:
-                    - 'PODLABELS:app:publisher'
+                    - 'PODLABELS:app:workload'
                   plugin: K8S
                   parent_id: '1'
           
