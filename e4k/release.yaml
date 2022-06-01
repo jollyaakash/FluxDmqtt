@@ -14,3 +14,8 @@ spec:
         name: my-repository
         namespace: default
   interval: 5m
+  valuesFrom:
+  - kind: ConfigMap
+    name: edge-identities
+    valuesKey: Config.toml
+    targetPath: e4kspiffe.identitymanager.configToml
