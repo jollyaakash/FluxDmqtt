@@ -2,7 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: e4kgitrepo
-  namespace: e4k
+  namespace: default
 spec:
   interval: 1m0s
   url: https://github.com/Azure/E4K
@@ -10,4 +10,4 @@ spec:
     branch: master
     commit: "2266acf19420a1af20f8e331e72bc149fa52e3b3"
   secretRef:
-    name: basic-access-auth
+    name: access-auth
