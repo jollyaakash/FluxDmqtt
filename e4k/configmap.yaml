@@ -5,6 +5,9 @@ metadata:
   namespace: default
 data:
   values.yaml: |
+    e4kmqtt:
+      authenticator:
+        type: null
     e4kspiffe:
       identitymanager:
         configYaml:
