@@ -7,13 +7,10 @@ spec:
   releaseName: e4k-dev
   chart:
     spec:
-      chart: az-e4k
-      version: 0.1.0
+      chart: az-e4k 
+      version: 0.1.0-amd64 # or arm64
       sourceRef:
         kind: HelmRepository
         name: my-repository
         namespace: default
   interval: 30m
-  valuesFrom:
-  - kind: ConfigMap
-    name: edge-identities
