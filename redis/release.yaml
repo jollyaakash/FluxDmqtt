@@ -18,6 +18,13 @@ spec:
   install:
     remediation:
       retries: 3
-  valuesFrom:
-    - kind: ConfigMap
-      name: redis-values
+  values:
+    usePassword: false
+    cluster:
+      enabled: false
+    master:
+      persistence:
+        enabled: false
+
+    volumePermissions:
+      enabled: true
