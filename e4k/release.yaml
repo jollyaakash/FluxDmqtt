@@ -14,3 +14,6 @@ spec:
         name: my-repository
         namespace: default
   interval: 30m
+  install:
+    remediation:
+      retries: 3
