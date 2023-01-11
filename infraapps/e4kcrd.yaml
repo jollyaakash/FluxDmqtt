@@ -6,4 +6,4 @@ metadata:
  name: {{ $fullName }}
  namespace: {{ $.Release.Namespace | default "default" | quote }}
 spec:
- logLevel: 2
+ logLevel: 1
