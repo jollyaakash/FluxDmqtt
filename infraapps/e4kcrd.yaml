@@ -1,0 +1,9 @@
+{{- $fullName := include "dmqtt.fullname" . -}}
+
+apiVersion: az-edge.com/v1
+kind: AzEdgeBroker
+metadata:
+ name: {{ $fullName }}
+ namespace: {{ $.Release.Namespace | default "default" | quote }}
+spec:
+ logLevel: 2
