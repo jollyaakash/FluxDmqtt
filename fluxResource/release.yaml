@@ -11,6 +11,6 @@ spec:
       version: 0.1.0-amd64 # or arm64
       sourceRef:
         kind: HelmRepository
-        name: my-repository
+        name: another-repository
         namespace: dmqttdemo
-  interval: 30m
+  interval: 5m
