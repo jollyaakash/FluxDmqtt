@@ -1,0 +1,8 @@
+apiVersion: az-edge.com/v1
+kind: AzEdgeMqttBridge
+metadata:
+ name: bridge
+ namespace: "default"
+spec:
+ logLevel: debug
+ bridgeInstances: 11
