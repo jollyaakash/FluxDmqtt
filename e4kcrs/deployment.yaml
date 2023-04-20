@@ -1,0 +1,39 @@
+apiVersion: az-edge.com/v1alpha1
+kind: Broker
+metadata:
+  name: "my-broker"
+  namespace: default
+spec:
+  mode: auto
+  image:
+    pullPolicy: Always
+    repository: e4kpreview.azurecr.io/dmqtt-pod
+    tag: 0.3.0
+  authImage:
+    pullPolicy: Always
+    repository: e4kpreview.azurecr.io/dmqtt-authentication
+    tag: 0.3.0
+---
+apiVersion: az-edge.com/v1alpha1
+kind: BrokerListener
+metadata:
+  name: "my-non-tls-listener"
+  namespace: default
+spec:
+  brokerRef: "my-broker"
+  authenticationEnabled: false
+  authorizationEnabled: false
+  port: 1883
+---
+apiVersion: az-edge.com/v1alpha1
+kind: BrokerDiagnostic
+metadata:
+  name: "my-diag"
+  namespace: default
+spec:
+  brokerRef: "my-broker"
+  diagnosticServiceEndpoint: azedge-diagnostics-service:9700
+  enableMetrics: true  
+  enableTracing: true  
+  logLevel: debug,hyper=off,kube_client=off,tower=off,conhash=off,h2=off
+  enableSelfCheck: false
