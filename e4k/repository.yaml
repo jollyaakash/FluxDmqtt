@@ -6,5 +6,6 @@ metadata:
 spec:
   # The interval at which to check the upstream for updates
   interval: 1m
+  type: oci
   # The repository URL, can be a HTTP/S or SSH address
   url: oci://e4kpreview.azurecr.io/helm
